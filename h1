@@ -1,0 +1,12 @@
+$poker = [];
+for ($i=0; $i <52 ; $i++) {
+	$poker[$i] = $i;
+}
+
+for ($i=0; $i <52 ; $i++) {
+	$rnd = rand(0,51-$i);
+	list($poker[$rnd],$poker[51-$i]) = [$poker[51-$i],$poker[$rnd]];
+}
+foreach ($poker as $key => $value) {
+	echo "{$value}<br>";
+}
