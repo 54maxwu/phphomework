@@ -1,0 +1,22 @@
+<?php
+
+$type = ["黑桃","愛心","紅磚","梅花"];
+for ($i=0; $i < 4; $i++) {
+	for ($j=1; $j <= 13; $j++) {
+		$poker[] = $type[$i].$j;
+	}
+}
+shuffle($poker);
+$players = [[],[],[],[]];
+foreach ($poker as $i => $v) {
+	$players[$i % 4][] = $v;
+}
+echo "<table border='1' width='100%'><tr>";
+foreach ($players as $v) {
+	echo "<td>";
+	foreach ($v as $vv) {
+		echo "{$vv}<br>";
+	}
+	echo "</td>";
+}
+echo "</tr></table>";
